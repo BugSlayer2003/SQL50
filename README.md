@@ -1,13 +1,15 @@
-# SQL LeetCode Practice
+# SQL50
 
-这个仓库用来记录我的 SQL LeetCode 练习。每道题都尽量保留：
+SQL practice repository for LeetCode database problems.
 
-- 题目对应的建表和测试数据
-- 可本地运行的 SQL 解法
-- 预期输出校验
-- 适合复盘的清晰格式
+Each solution is organized so it can be reviewed and run locally:
 
-本地 runner 使用 Python 自带的 SQLite，不需要额外安装数据库服务。正式提交到 LeetCode 时，如果题目要求 MySQL，少数函数可能需要按 MySQL 语法微调。
+- Problem setup data
+- SQL solution
+- Expected output check
+- Notes-friendly file structure for interview preparation
+
+The local runner uses Python's built-in SQLite module, so no database server is required. Most LeetCode SQL problems are written for MySQL; common SQL patterns such as joins, grouping, CTEs, and window functions can still be practiced locally here. MySQL-specific functions may need small syntax changes before final LeetCode submission.
 
 ## Solved Problems
 
@@ -17,13 +19,13 @@
 
 ## Run Locally
 
-在 VS Code 里打开要练的 SQL 文件，然后按：
+Open a SQL practice file in VS Code and press:
 
 ```text
 Ctrl + Shift + B
 ```
 
-也可以在终端运行：
+Or run it from PowerShell:
 
 ```powershell
 py .\scripts\run_sql.py .\SQL1767
@@ -31,31 +33,28 @@ py .\scripts\run_sql.py .\SQL1767
 
 ## File Format
 
-每道题建议分三段：
+Each problem file can use three sections:
 
 ```sql
 -- @setup
--- 建表和插入测试数据
+-- Create tables and insert test data.
 
 -- @solution
--- 你的最终 SELECT 写这里
+-- Write the final SELECT here.
 
 -- @expected unordered
 -- col1 | col2
 -- 1    | a
 ```
 
-`-- @expected unordered` 表示结果顺序无所谓。需要严格顺序时写成 `-- @expected`。
+Use `-- @expected unordered` when row order does not matter. Use `-- @expected` when exact row order matters.
 
-## VS Code 扩展
+## VS Code
 
-这个目录已经写好了推荐扩展，VS Code 可能会提示安装：
+Recommended extensions are listed in `.vscode/extensions.json`:
 
-- `LeetCode.vscode-leetcode`：VS Code 里的 LeetCode 扩展，适合拉题目和提交答案。
-- `mtxr.sqltools` + `mtxr.sqltools-driver-sqlite`：查看 SQLite 表和连接数据库用。
+- `LeetCode.vscode-leetcode`
+- `mtxr.sqltools`
+- `mtxr.sqltools-driver-sqlite`
 
-本地 runner 和 LeetCode 扩展是两条线：runner 负责离线练习和快速问答，LeetCode 扩展负责正式提交。
-
-## Notes
-
-LeetCode SQL 多数题按 MySQL 写。本地这里先用 SQLite，SELECT、JOIN、GROUP BY、CTE、窗口函数都能练；少数 MySQL 专属函数需要改成 SQLite 写法，或者之后再加一个 MySQL/Docker 版本。
+The local runner is for fast offline practice. The LeetCode extension is for pulling official problems and submitting final answers.
