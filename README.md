@@ -17,6 +17,8 @@ The local runner uses Python's built-in SQLite module, so no database server is 
 | --- | --- |
 | LeetCode SQL 50 | [`SQL50/index.md`](./SQL50/index.md) |
 
+Each SQL50 file includes an offline prompt summary and table schema, so you can practice locally without opening the LeetCode website. Use the LeetCode extension only when you want official online testing or submission.
+
 ## Solved Problems
 
 | ID | Problem | Topic | File |
@@ -63,4 +65,4 @@ Recommended extensions are listed in `.vscode/extensions.json`:
 - `mtxr.sqltools`
 - `mtxr.sqltools-driver-sqlite`
 
-The local runner is for fast offline practice. The LeetCode extension is for pulling official problems and submitting final answers.
+The local runner is for fast offline practice. The LeetCode extension is for official online testing and final submission.

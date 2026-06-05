@@ -3,12 +3,19 @@
 -- Difficulty: EASY
 -- Topic: Sorting and Grouping
 -- Link: https://leetcode.com/problems/user-activity-for-the-past-30-days-i/
+--
+-- Offline prompt:
+--   Return daily active user counts for the 30-day window ending 2019-07-27.
+--
+-- Tables:
+--   Activity(user_id INT, session_id INT, activity_date DATE, activity_type ENUM('open_session', 'end_session', 'scroll_down', 'send_message'))
 
 -- @setup
--- Add local sample tables here if you want to run this file with scripts/run_sql.py.
+-- Optional: add local sample tables here if you want to run this file with scripts/run_sql.py.
+-- You can still write and submit the solution through the LeetCode extension without local setup.
 
 -- @solution
 -- Write your MySQL solution here.
 
 -- @expected unordered
--- Add expected output here when you create local sample data.
+-- Optional: add expected local output here after creating sample data.

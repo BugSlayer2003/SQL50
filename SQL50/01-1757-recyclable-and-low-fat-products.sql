@@ -3,12 +3,19 @@
 -- Difficulty: EASY
 -- Topic: Select
 -- Link: https://leetcode.com/problems/recyclable-and-low-fat-products/
+--
+-- Offline prompt:
+--   Return the product IDs for products that are both low-fat and recyclable.
+--
+-- Tables:
+--   Products(product_id INT, low_fats ENUM('Y', 'N'), recyclable ENUM('Y', 'N'))
 
 -- @setup
--- Add local sample tables here if you want to run this file with scripts/run_sql.py.
+-- Optional: add local sample tables here if you want to run this file with scripts/run_sql.py.
+-- You can still write and submit the solution through the LeetCode extension without local setup.
 
 -- @solution
 -- Write your MySQL solution here.
 
 -- @expected unordered
--- Add expected output here when you create local sample data.
+-- Optional: add expected local output here after creating sample data.

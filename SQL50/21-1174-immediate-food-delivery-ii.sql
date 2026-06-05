@@ -3,12 +3,19 @@
 -- Difficulty: MEDIUM
 -- Topic: Basic Aggregate Functions
 -- Link: https://leetcode.com/problems/immediate-food-delivery-ii/
+--
+-- Offline prompt:
+--   Return the percentage of customers whose first order was delivered on the preferred delivery date.
+--
+-- Tables:
+--   Delivery(delivery_id INT, customer_id INT, order_date DATE, customer_pref_delivery_date DATE)
 
 -- @setup
--- Add local sample tables here if you want to run this file with scripts/run_sql.py.
+-- Optional: add local sample tables here if you want to run this file with scripts/run_sql.py.
+-- You can still write and submit the solution through the LeetCode extension without local setup.
 
 -- @solution
 -- Write your MySQL solution here.
 
 -- @expected unordered
--- Add expected output here when you create local sample data.
+-- Optional: add expected local output here after creating sample data.
