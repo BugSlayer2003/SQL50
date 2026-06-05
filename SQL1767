@@ -1,0 +1,65 @@
+-- LeetCode 1767. Find the Subtasks That Did Not Execute
+-- SQLite local practice template
+
+-- @setup
+DROP TABLE IF EXISTS Tasks;
+DROP TABLE IF EXISTS Executed;
+
+CREATE TABLE Tasks (
+  task_id INTEGER PRIMARY KEY,
+  subtasks_count INTEGER NOT NULL
+);
+
+CREATE TABLE Executed (
+  task_id INTEGER NOT NULL,
+  subtask_id INTEGER NOT NULL,
+  PRIMARY KEY (task_id, subtask_id)
+);
+
+INSERT INTO Tasks (task_id, subtasks_count) VALUES
+  (1, 3),
+  (2, 2),
+  (3, 4);
+
+INSERT INTO Executed (task_id, subtask_id) VALUES
+  (1, 2),
+  (3, 1),
+  (3, 2),
+  (3, 3),
+  (3, 4);
+
+-- @solution
+WITH RECURSIVE all_subtasks AS (
+  SELECT
+    task_id,
+    1 AS subtask_id,
+    subtasks_count
+  FROM Tasks
+
+  UNION ALL
+
+  SELECT
+    task_id,
+    subtask_id + 1,
+    subtasks_count
+  FROM all_subtasks
+  WHERE subtask_id < subtasks_count
+)
+SELECT
+  all_subtasks.task_id,
+  all_subtasks.subtask_id
+FROM all_subtasks
+LEFT JOIN Executed
+  ON all_subtasks.task_id = Executed.task_id
+  AND all_subtasks.subtask_id = Executed.subtask_id
+WHERE Executed.task_id IS NULL
+ORDER BY
+  all_subtasks.task_id,
+  all_subtasks.subtask_id;
+
+-- @expected unordered
+task_id | subtask_id
+1 | 1
+1 | 3
+2 | 1
+2 | 2

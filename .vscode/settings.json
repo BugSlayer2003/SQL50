@@ -1,0 +1,12 @@
+{
+  "files.associations": {
+    "SQL*": "sql"
+  },
+  "sqltools.connections": [
+    {
+      "name": "SQL Practice SQLite",
+      "driver": "SQLite",
+      "database": "${workspaceFolder}/practice.db"
+    }
+  ]
+}
