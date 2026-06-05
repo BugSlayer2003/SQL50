@@ -11,6 +11,12 @@ Each solution is organized so it can be reviewed and run locally:
 
 The local runner uses Python's built-in SQLite module, so no database server is required. Most LeetCode SQL problems are written for MySQL; common SQL patterns such as joins, grouping, CTEs, and window functions can still be practiced locally here. MySQL-specific functions may need small syntax changes before final LeetCode submission.
 
+## Study Plan
+
+| Study Plan | Local Checklist |
+| --- | --- |
+| LeetCode SQL 50 | [`SQL50/index.md`](./SQL50/index.md) |
+
 ## Solved Problems
 
 | ID | Problem | Topic | File |
